@@ -8,6 +8,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,13 +19,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StaliukaiComponent } from './komponentai/staliukai/staliukai.component';
 import { StaliukoMygtukasComponent } from './komponentai/staliuko-mygtukas/staliuko-mygtukas.component';
 import { DropDownComponent } from './komponentai/drop-down/drop-down.component';
+import { MeniuComponent } from './komponentai/meniu/meniu.component';
+import { PridetiPatiekalaComponent } from './komponentai/prideti-patiekala/prideti-patiekala.component';
+import { StaliukasComponent } from './komponentai/staliukas/staliukas.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     StaliukaiComponent,
     StaliukoMygtukasComponent,
-    DropDownComponent
+    DropDownComponent,
+    MeniuComponent,
+    PridetiPatiekalaComponent,
+    StaliukasComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -34,7 +46,11 @@ import { DropDownComponent } from './komponentai/drop-down/drop-down.component';
     MatIconModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatMenuModule,
+    MatTableModule,
+    ReactiveFormsModule
   
   ],
   providers: [],
