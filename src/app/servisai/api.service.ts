@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,20 @@ export class ApiService {
 
   gautiVisusPatiekalus() {
 
-    return this.http.get('https://rest-api-uzuotys4.herokuapp.com/suniukas');
+    return this.http.get('https://restoranas-api.herokuapp.com/patiekalusarasas');
   }
-  gautiPatiekala() {
+  async gautiPatiekala(id:any) {
 
-    return this.http.get('https://rest-api-uzuotys4.herokuapp.com/suniukas');
+    
+    var rezultatas = await this.http.get('https://restoranas-api.herokuapp.com/' + id.value);
+     return rezultatas;
   }
 
   pridetiPatiekala(patiekalas: any) {
   
     console.log(patiekalas);
     
-    return this.http.post('https://rest-api-uzuotys4.herokuapp.com/prideti', patiekalas).subscribe(data=> console.log(data));
+    return this.http.post('https://restoranas-api.herokuapp.com', patiekalas).subscribe(data=> console.log(data));
   }
 
 

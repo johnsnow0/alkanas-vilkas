@@ -2,7 +2,7 @@
 
 <app-drop-down></app-drop-down>
 <!-- <ng-container *ngIf="product.length !=0"> -->
-<ng-container *ngIf="product.length !=0">  
+<ng-container *ngIf="product.length !=1">  
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
@@ -11,8 +11,8 @@
                         <tr>
                             <th>Eilės nr.</th>
                             <th>Produkto pavadinimas</th>
-                            <th>Produkto nuotrauka</th>
-                            <th>Aprašymas</th>
+                            <!-- <th>Produkto nuotrauka</th>
+                            <th>Aprašymas</th> -->
                             <th>Kaina</th>
                             <th>Kiekis</th>
                             <th>Suma</th>
@@ -22,21 +22,23 @@
                     <tbody>
                         <tr *ngFor="let item of product; let i = index">
                             <td>{{i+1}}</td>
-                            <td>{{item.title}}</td>
+                            <td>{{item.pavadinimas}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td style="width: 25%;">{{item.description}}</td>
-                            <td style="width: 12%;">{{item.price}}</td>
+                            <td style="width: 12%;">{{item.kaina}}</td>
                             <td style="width: 12%;">{{item.quantity}}</td>
                             <td style="width: 12%;">{{item.total}}</td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button mat-raised-button color="warn">Del</button>
+                                  
                             </td>
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <td><button (click)="emptyCart()" class="btn btn-danger">Išvalyti krepšelį</button></td>
+                            <td><button (click)="emptyCart()" class="btn btn-danger">Naujas užsakymas</button></td>
                             <!-- <td><button routerLink="/products" class="btn btn-primary">Pirkti toliau</button></td> -->
-                            <td><button class="btn btn-success">Apmokėjimas</button></td>
+                            <td><button class="btn btn-success">Uždaryti stalą</button></td>
                             <td><strong>Suma yra: ${{grandTotal}}</strong></td>
                         </tr>
                     </tbody>

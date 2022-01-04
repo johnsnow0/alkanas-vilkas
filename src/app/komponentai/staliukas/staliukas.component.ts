@@ -14,7 +14,9 @@ export class StaliukasComponent implements OnInit {
   product:any = [];
   grandTotal:number=0;
 
-  constructor(private uzsakymas: UzsakymasService) { }
+  constructor(private uzsakymas: UzsakymasService) {
+    this.product = this.uzsakymas.gautiPatiekalai;
+   }
 
   ngOnInit(): void {
   //   this.uzsakymas.getProducts().subscribe(res=>{this.product=res;});

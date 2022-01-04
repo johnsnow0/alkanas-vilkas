@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ApiService } from 'src/app/servisai/api.service';
 
 @Component({
   selector: 'app-prideti-patiekala',
@@ -8,19 +9,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PridetiPatiekalaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api : ApiService) { }
 
   ngOnInit(): void {
   }
   patiekaloForma = new FormGroup({
-    ID: new FormControl(''),
+    
     pavadinimas: new FormControl(''),
     kaina: new FormControl('')
     });
     
-    idetiSuniuka() {
+    naujasPatiekalas() {
     
-      // this.suniukoServisas.siustiSuniuka(this.suniukoForma.value);
+       this.api.pridetiPatiekala(this.patiekaloForma.value);
       
       console.log(this.patiekaloForma.value);
       this.patiekaloForma.reset();

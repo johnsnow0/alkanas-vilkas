@@ -5,9 +5,8 @@
 
     <div class="forma">
 
-        <form [formGroup]="patiekaloForma" (ngSubmit)="idetiSuniuka()">
-            <input type="text" placeholder="Patiekalo ID" formControlName="id">
-            <br><br>
+        <form [formGroup]="patiekaloForma" (ngSubmit)="naujasPatiekalas()">
+            
             <input type="text" placeholder="Patiekalo pavadinimas" formControlName="pavadinimas">
             <br><br>
             <input type="text" placeholder="Patiekalo kaina" formControlName="kaina">
