@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DropDownComponent } from './komponentai/drop-down/drop-down.component';
+import { KiekioMygtukasComponent } from './komponentai/kiekio-mygtukas/kiekio-mygtukas.component';
 import { MeniuComponent } from './komponentai/meniu/meniu.component';
 import { PridetiPatiekalaComponent } from './komponentai/prideti-patiekala/prideti-patiekala.component';
 import { StaliukaiComponent } from './komponentai/staliukai/staliukai.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'drop-down', component: DropDownComponent },
   { path: 'meniu', component: MeniuComponent },
   { path: 'prideti-patiekala', component: PridetiPatiekalaComponent },
-  { path: 'staliukas', component: StaliukasComponent }
+  { path: 'staliukas', component: StaliukasComponent },
+  { path: 'kiekio-mygtukas', component: KiekioMygtukasComponent }
 ];
 
 @NgModule({

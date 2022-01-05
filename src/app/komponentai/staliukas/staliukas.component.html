@@ -26,7 +26,7 @@
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td style="width: 25%;">{{item.description}}</td>
                             <td style="width: 12%;">{{item.kaina}}</td>
-                            <td style="width: 12%;">{{item.quantity}}</td>
+                            <td style="width: 12%;"><app-kiekio-mygtukas></app-kiekio-mygtukas>></td>
                             <td style="width: 12%;">{{item.total}}</td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
@@ -36,7 +36,7 @@
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <td><button (click)="emptyCart()" class="btn btn-danger">Naujas užsakymas</button></td>
+                            <td><button (click)="emptyCart()" class="btn btn-danger">Pateikti užsakymą</button></td>
                             <!-- <td><button routerLink="/products" class="btn btn-primary">Pirkti toliau</button></td> -->
                             <td><button class="btn btn-success">Uždaryti stalą</button></td>
                             <td><strong>Suma yra: ${{grandTotal}}</strong></td>

@@ -13,18 +13,18 @@ export class ApiService {
 
     return this.http.get('https://restoranas-api.herokuapp.com/patiekalusarasas');
   }
-  async gautiPatiekala(id:any) {
+  async gautiPatiekala(id: any) {
 
-    
+
     var rezultatas = await this.http.get('https://restoranas-api.herokuapp.com/' + id.value);
-     return rezultatas;
+    return rezultatas;
   }
 
   pridetiPatiekala(patiekalas: any) {
-  
+
     console.log(patiekalas);
-    
-    return this.http.post('https://restoranas-api.herokuapp.com', patiekalas).subscribe(data=> console.log(data));
+
+    return this.http.post('https://restoranas-api.herokuapp.com', patiekalas).subscribe(data => console.log(data));
   }
 
 
