@@ -1,11 +1,14 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class ApiService {
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -15,9 +18,8 @@ export class ApiService {
   }
   async gautiPatiekala(id: any) {
 
-
-    var rezultatas = await this.http.get('https://restoranas-api.herokuapp.com/' + id.value);
-    return rezultatas;
+    var rezultatas = await this.http.get('https://restoranas-api.herokuapp.com/' + id).toPromise();
+    this.patiekalasGautasEvent.emit(rezultatas);
   }
 
   pridetiPatiekala(patiekalas: any) {
@@ -27,7 +29,7 @@ export class ApiService {
     return this.http.post('https://restoranas-api.herokuapp.com', patiekalas).subscribe(data => console.log(data));
   }
 
-
+patiekalasGautasEvent: EventEmitter<any> = new EventEmitter();
 
 
 

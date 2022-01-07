@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UzsakymasService } from 'src/app/servisai/uzsakymas.service';
-
-
+import { ApiService } from 'src/app/servisai/api.service';
 
 
 @Component({
@@ -14,18 +12,19 @@ export class StaliukasComponent implements OnInit {
   product:any = [];
   grandTotal:number=0;
 
-  constructor(private uzsakymas: UzsakymasService) {
-    this.product = this.uzsakymas.gautiPatiekalai;
+  constructor(private http: ApiService) {
+    this.http.patiekalasGautasEvent.subscribe(res=> {this.product.push(res); console.log(this.product)});
+    
    }
 
   ngOnInit(): void {
-  //   this.uzsakymas.getProducts().subscribe(res=>{this.product=res;});
+     
   //  this.grandTotal = this.uzsakymas.getTotalPrice()
   }
   removeItem(item:any) {
-    this.uzsakymas.removeCartItem();
+   
   }
   emptyCart() {
-    this.uzsakymas.removeCart();
+    
   }
 }

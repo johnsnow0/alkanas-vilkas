@@ -19,7 +19,7 @@ export class DropDownComponent implements OnInit {
   ngOnInit(): void {
   }
   pasirinktasPatiekalas(id: any) {
-    this.uzsakymas.gautiPatiekala(id.value);
+     this.http.gautiPatiekala(id.value);
     console.log(id.value);
   }
 }
