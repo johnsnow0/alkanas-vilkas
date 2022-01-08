@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/servisai/api.service';
 
 @Component({
   selector: 'app-staliukai',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaliukaiComponent implements OnInit {
 
-  constructor() { }
+staliukai: any
+
+  constructor(private http: ApiService) { 
+    this.http.staliukuSarasas().subscribe((data) => { this.staliukai = data });
+  }
 
   ngOnInit(): void {
   }

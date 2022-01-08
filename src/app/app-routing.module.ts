@@ -8,6 +8,7 @@ import { PridetiPatiekalaComponent } from './komponentai/prideti-patiekala/pride
 import { StaliukaiComponent } from './komponentai/staliukai/staliukai.component';
 import { StaliukasComponent } from './komponentai/staliukas/staliukas.component';
 import { StaliukoMygtukasComponent } from './komponentai/staliuko-mygtukas/staliuko-mygtukas.component';
+import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'staliukai', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'meniu', component: MeniuComponent },
   { path: 'prideti-patiekala', component: PridetiPatiekalaComponent },
   { path: 'staliukas', component: StaliukasComponent },
-  { path: 'kiekio-mygtukas', component: KiekioMygtukasComponent }
+  { path: 'kiekio-mygtukas', component: KiekioMygtukasComponent },
+  { path: 'virtuve', component: VirtuveComponent }
 ];
 
 @NgModule({

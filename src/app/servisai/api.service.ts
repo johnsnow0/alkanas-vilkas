@@ -31,7 +31,13 @@ export class ApiService {
 
 patiekalasGautasEvent: EventEmitter<any> = new EventEmitter();
 
+staliukuSarasas() {
 
+  return this.http.get('https://restoranas-api.herokuapp.com/staliukuSarasas');
+}
 
+uzsakymas(uzsakymas: any) {
+console.log(uzsakymas);
+}
 
 }

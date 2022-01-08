@@ -9,11 +9,11 @@ import { ApiService } from 'src/app/servisai/api.service';
 })
 export class StaliukasComponent implements OnInit {
 
-  product:any = [];
+  patiekalas:any = [];
   grandTotal:number=0;
 
   constructor(private http: ApiService) {
-    this.http.patiekalasGautasEvent.subscribe(res=> {this.product.push(res); console.log(this.product)});
+    this.http.patiekalasGautasEvent.subscribe(res=> {this.patiekalas.push(res); console.log(this.patiekalas)});
     
    }
 
@@ -21,10 +21,17 @@ export class StaliukasComponent implements OnInit {
      
   //  this.grandTotal = this.uzsakymas.getTotalPrice()
   }
-  removeItem(item:any) {
-   
+  salintiPatiekala(item:any) {
+    const index = this.patiekalas.indexOf(item, 0);
+    if (index > -1) {
+       [this.patiekalas].splice(index, 1);
+    }
+    console.log(item);
   }
-  emptyCart() {
-    
+  pateiktiUzsakyma() {
+    this.http.uzsakymas(this.patiekalas);
+  }
+  uzdarytiStala() {
+    this.patiekalas = [];
   }
 }

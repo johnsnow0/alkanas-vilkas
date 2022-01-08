@@ -2,7 +2,7 @@
 
 <app-drop-down></app-drop-down>
 <!-- <ng-container *ngIf="product.length !=0"> -->
-<ng-container *ngIf="product.length !=0">  
+<ng-container *ngIf="patiekalas.length !=0">  
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
@@ -10,9 +10,7 @@
                     <thead>
                         <tr>
                             <th>Eilės nr.</th>
-                            <th>Produkto pavadinimas</th>
-                            <!-- <th>Produkto nuotrauka</th>
-                            <th>Aprašymas</th> -->
+                            <th>Patiekalas</th>
                             <th>Kaina</th>
                             <th>Kiekis</th>
                             <th>Suma</th>
@@ -20,25 +18,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of product; let i = index">
-                            <td>{{i+1}}</td>
-                            <td>{{item.pavadinimas}}</td>
-                            <td style="width: 12%;">{{item.kaina}}</td>
-                            <td style="width: 25%;"><app-kiekio-mygtukas></app-kiekio-mygtukas></td>
-                            <td style="width: 12%;"></td>
-                            <td style="width: 12%;"><button (click)="removeItem(item)" mat-raised-button color="warn">Šalint</button></td>
-                            <td style="width: 12%;">{{item.total}}</td>
-                            <td>
-                                
-                                
-                                  
-                            </td>
+                        <tr *ngFor="let item of patiekalas; let i = index">
+                            
+                            <td style="width: 10%; text-align: center;">{{i+1}}</td>
+                            <td style="text-align: center;">{{item.pavadinimas}}</td>
+                            <td style="width: 5%;">{{item.kaina}}</td>
+                            <td style="width: 25%; align-items: center;"><app-kiekio-mygtukas></app-kiekio-mygtukas></td>
+                            <td style="width: 2%; text-align: center;">{{item.kaina}}</td>
+                            <td style="width: 12%;"><button (click)="salintiPatiekala(item)" mat-raised-button color="warn">Šalint</button></td>
+                            
                         </tr>
                         <tr>
                             <td colspan="4"></td>
-                            <td><button (click)="emptyCart()" class="btn btn-danger">Pateikti užsakymą</button></td>
-                            <td></td>
-                            <td><button class="btn btn-success">Uždaryti stalą</button></td>
+                            <td><button (click)="pateiktiUzsakyma()" class="btn btn-danger">Pateikti užsakymą</button></td>
+                            
+                            <td><button (click)="uzdarytiStala()" class="btn btn-success">Uždaryti stalą</button></td>
                             <td><strong>Suma yra: ${{grandTotal}}</strong></td>
                         </tr>
                     </tbody>
@@ -52,7 +46,7 @@
     
     
     
-    <ng-container *ngIf="product.length ==0">
+    <ng-container *ngIf="patiekalas.length ==0">
         <div class="container">
             <div class="card">
                 <h5 class="card-title">Stalas 1</h5>
@@ -65,3 +59,5 @@
             </div>
         </div>
     </ng-container>
+
+    

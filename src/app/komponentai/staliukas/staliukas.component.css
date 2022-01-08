@@ -30,7 +30,7 @@ h6 {
 .card-table {
     position: relative;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     min-width: none;
     word-wrap: break-word;
     background-color: #fff;
@@ -78,4 +78,6 @@ section {
     justify-content: center;
     width: 120px;
   }
-  
+  table {
+    width: 100%;
+  }

@@ -23,6 +23,7 @@ import { MeniuComponent } from './komponentai/meniu/meniu.component';
 import { PridetiPatiekalaComponent } from './komponentai/prideti-patiekala/prideti-patiekala.component';
 import { StaliukasComponent } from './komponentai/staliukas/staliukas.component';
 import { KiekioMygtukasComponent } from './komponentai/kiekio-mygtukas/kiekio-mygtukas.component';
+import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { KiekioMygtukasComponent } from './komponentai/kiekio-mygtukas/kiekio-my
     PridetiPatiekalaComponent,
     StaliukasComponent,
     KiekioMygtukasComponent,
+    VirtuveComponent,
     
   ],
   imports: [

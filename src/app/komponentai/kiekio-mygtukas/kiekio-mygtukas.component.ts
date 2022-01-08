@@ -12,6 +12,7 @@ kiekis: number = 1;
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 atimti() {
@@ -25,5 +26,9 @@ if(this.kiekis != 1) {
 prideti() {
 this.kiekis++;
 }
+
+
+
+
 
 }

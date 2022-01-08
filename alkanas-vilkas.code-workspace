@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../mano-eshopas"
+		},
+		{
+			"path": "../angular-suniukai-api"
 		}
 	],
 	"settings": {}
