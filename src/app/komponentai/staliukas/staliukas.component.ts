@@ -1,3 +1,4 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/servisai/api.service';
 
@@ -9,8 +10,9 @@ import { ApiService } from 'src/app/servisai/api.service';
 })
 export class StaliukasComponent implements OnInit {
 
-  patiekalas:any = [];
+  patiekalas:any[] = [];
   grandTotal:number=0;
+  kiekis: any;
 
   constructor(private http: ApiService) {
     this.http.patiekalasGautasEvent.subscribe(res=> {this.patiekalas.push(res); console.log(this.patiekalas)});
@@ -24,14 +26,20 @@ export class StaliukasComponent implements OnInit {
   salintiPatiekala(item:any) {
     const index = this.patiekalas.indexOf(item, 0);
     if (index > -1) {
-       [this.patiekalas].splice(index, 1);
+       this.patiekalas.splice(index, 1);
     }
-    console.log(item);
+    console.log(index);
+    
   }
   pateiktiUzsakyma() {
     this.http.uzsakymas(this.patiekalas);
   }
   uzdarytiStala() {
     this.patiekalas = [];
+  }
+
+  addItem(kiekis: any) {
+this.kiekis = kiekis;
+return this.kiekis;
   }
 }

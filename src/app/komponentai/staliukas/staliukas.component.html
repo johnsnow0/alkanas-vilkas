@@ -23,8 +23,8 @@
                             <td style="width: 10%; text-align: center;">{{i+1}}</td>
                             <td style="text-align: center;">{{item.pavadinimas}}</td>
                             <td style="width: 5%;">{{item.kaina}}</td>
-                            <td style="width: 25%; align-items: center;"><app-kiekio-mygtukas></app-kiekio-mygtukas></td>
-                            <td style="width: 2%; text-align: center;">{{item.kaina}}</td>
+                            <td style="width: 25%; align-items: center;"><app-kiekio-mygtukas (newItemEvent)="addItem($event)"></app-kiekio-mygtukas></td>
+                            <td style="width: 2%; text-align: center;">{{item.kaina * kiekis}}</td>
                             <td style="width: 12%;"><button (click)="salintiPatiekala(item)" mat-raised-button color="warn">Šalint</button></td>
                             
                         </tr>

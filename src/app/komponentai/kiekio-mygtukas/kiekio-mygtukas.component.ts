@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-kiekio-mygtukas',
@@ -19,16 +19,20 @@ atimti() {
 
 if(this.kiekis != 1) {
   this.kiekis--;
+  this.addNewItem()
 }  
 }
 
 
 prideti() {
 this.kiekis++;
+this.addNewItem();
 }
 
+@Output() newItemEvent = new EventEmitter<number>();
 
-
-
+addNewItem() {
+  this.newItemEvent.emit(this.kiekis);
+}
 
 }
