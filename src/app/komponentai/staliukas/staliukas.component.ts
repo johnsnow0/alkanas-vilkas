@@ -16,12 +16,11 @@ export class StaliukasComponent implements OnInit {
 
   constructor(private http: ApiService) {
     this.http.patiekalasGautasEvent.subscribe(res=> {this.patiekalas.push(res); console.log(this.patiekalas)});
-    
+    this.patiekalas = this.http.dabartinisStaliukas
    }
 
   ngOnInit(): void {
      
-  //  this.grandTotal = this.uzsakymas.getTotalPrice()
   }
   salintiPatiekala(item:any) {
     const index = this.patiekalas.indexOf(item, 0);

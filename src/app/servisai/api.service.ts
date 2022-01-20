@@ -37,7 +37,21 @@ staliukuSarasas() {
 }
 
 uzsakymas(uzsakymas: any) {
-console.log(uzsakymas);
-}
+this.staliukas1 = uzsakymas;
 
 }
+
+
+
+
+staliukas1: any[] =[]
+staliukas2: any[] =[]
+staliukas3: any[] =[]
+staliukas4: any[] =[]
+dabartinisStaliukas: any[]=[]
+staliukoNumeris = 1;
+
+
+
+}
+
