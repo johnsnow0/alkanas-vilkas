@@ -11,7 +11,7 @@ export class StaliukaiComponent implements OnInit {
 staliukai: any
 
   constructor(private http: ApiService) { 
-    this.http.staliukuSarasas().subscribe((data) => { this.staliukai = data });
+    this.http.staliukuSarasas().subscribe((data) => { this.staliukai = data; console.log(this.staliukai) });
   }
 
   ngOnInit(): void {

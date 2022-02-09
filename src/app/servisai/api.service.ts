@@ -37,12 +37,40 @@ staliukuSarasas() {
 }
 
 uzsakymas(uzsakymas: any) {
-this.staliukas1 = uzsakymas;
-
+console.log(this.staliukoNumeris);
+console.log(uzsakymas);
+  if(this.staliukoNumeris==0) {
+  this.staliukas1 = uzsakymas;
+}
+else if (this.staliukoNumeris ==1) {
+  this.staliukas2 = uzsakymas;
+}
+else if (this.staliukoNumeris ==2) {
+  this.staliukas3 = uzsakymas;
+}
+else if (this.staliukoNumeris ==3) {
+  this.staliukas4 = uzsakymas;
+}
 }
 
-
-
+nustatytiStaliuka(id: any) {
+  if(id==0) {
+    this.dabartinisStaliukas = this.staliukas1;
+  }
+  else if(id==1) {
+    this.dabartinisStaliukas = this.staliukas2;
+  }
+  else if(id==2) {
+    this.dabartinisStaliukas = this.staliukas3;
+  }
+  else if(id==3) {
+    this.dabartinisStaliukas = this.staliukas4;
+  }
+  this.staliukoNumeris = id;
+  this.rodomasStaliukasEvent.emit(this.dabartinisStaliukas);
+  console.log(this.staliukoNumeris);
+  console.log(this.dabartinisStaliukas);
+}
 
 staliukas1: any[] =[]
 staliukas2: any[] =[]
@@ -51,6 +79,7 @@ staliukas4: any[] =[]
 dabartinisStaliukas: any[]=[]
 staliukoNumeris = 1;
 
+rodomasStaliukasEvent: EventEmitter<any> = new EventEmitter();
 
 
 }

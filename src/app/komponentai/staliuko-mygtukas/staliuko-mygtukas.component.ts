@@ -13,14 +13,16 @@ export class StaliukoMygtukasComponent implements OnInit {
 
   @Input()
   text!: string;
-  id!: number;
+  @Input()
+  id2!: number;
 
   constructor(private http: ApiService) { }
 
   ngOnInit(): void {
   }
   nustatytiStaliukoID() {
-this.http.staliukoNumeris = this.id;
-console.log(this.id);
+
+this.http.nustatytiStaliuka(this.id2);
+console.log(this.id2);
   }
 }
