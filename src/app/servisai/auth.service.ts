@@ -13,7 +13,8 @@ export class AuthService {
   dabartinisUser: any;
 
   login(email: string, password: string) {
-      this.afAuth.signInWithEmailAndPassword(email, password).then(async() => {
+    console.log(email, password);  
+    this.afAuth.signInWithEmailAndPassword(email, password).then(async() => {
       
       
       console.log('AS PRISIJUGES');

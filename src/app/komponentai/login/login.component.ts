@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     console.log(loginForm.value)
     let json = JSON.stringify(loginForm.value)
     console.log(json)
-    this.auth.login(loginForm.value.login, loginForm.value.password);
+    this.auth.login(loginForm.value.Login, loginForm.value.Password);
   }
 }
 

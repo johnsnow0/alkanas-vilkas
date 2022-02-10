@@ -34,6 +34,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     provideAuth(() => getAuth())
   
   ],
