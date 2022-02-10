@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +29,9 @@ import { KiekioMygtukasComponent } from './komponentai/kiekio-mygtukas/kiekio-my
 import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
 import { RegistracijaComponent } from './komponentai/registracija/registracija.component';
 import { LoginComponent } from './komponentai/login/login.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -58,7 +64,12 @@ import { LoginComponent } from './komponentai/login/login.component';
     HttpClientModule,
     MatMenuModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   
   ],
   providers: [],

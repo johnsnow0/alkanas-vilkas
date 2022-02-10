@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jpbit-2": {
+      "hosting": {
+        "alkanas-vilkas": [
+          "alkanas-vilkas"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jpbit-2"
+  }
+}

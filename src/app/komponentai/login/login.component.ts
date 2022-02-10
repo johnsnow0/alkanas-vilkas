@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/servisai/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +15,16 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
   }
-onSubmit() {
-  console.warn(this.loginForm.value);
+
+  onSubmit(loginForm: any) {
+    console.log(loginForm.value)
+    let json = JSON.stringify(loginForm.value)
+    console.log(json)
+    this.auth.login(loginForm.value.login, loginForm.value.password);
+  }
 }
-}
+

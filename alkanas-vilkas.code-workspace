@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../angular-suniukai-api"
+		},
+		{
+			"path": "../JPBIT-2/eshop"
 		}
 	],
 	"settings": {}
