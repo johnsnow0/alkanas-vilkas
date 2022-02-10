@@ -13,7 +13,7 @@ import { StaliukoMygtukasComponent } from './komponentai/staliuko-mygtukas/stali
 import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'staliukai', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'staliukai', component: StaliukaiComponent },
   { path: 'staliuko-mygtukas', component: StaliukoMygtukasComponent },
   { path: 'drop-down', component: DropDownComponent },
