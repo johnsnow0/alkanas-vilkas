@@ -24,6 +24,8 @@ import { PridetiPatiekalaComponent } from './komponentai/prideti-patiekala/pride
 import { StaliukasComponent } from './komponentai/staliukas/staliukas.component';
 import { KiekioMygtukasComponent } from './komponentai/kiekio-mygtukas/kiekio-mygtukas.component';
 import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
+import { RegistracijaComponent } from './komponentai/registracija/registracija.component';
+import { LoginComponent } from './komponentai/login/login.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
     StaliukasComponent,
     KiekioMygtukasComponent,
     VirtuveComponent,
+    RegistracijaComponent,
+    LoginComponent,
     
   ],
   imports: [

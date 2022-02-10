@@ -33,7 +33,7 @@
                             <td><button (click)="pateiktiUzsakyma()" class="btn btn-danger">Pateikti užsakymą</button></td>
                             
                             <td><button (click)="uzdarytiStala()" class="btn btn-success">Uždaryti stalą</button></td>
-                            <td><strong>Suma yra: ${{grandTotal}}</strong></td>
+                            <td><strong>Suma yra: {{grandTotal}} eur.</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -52,7 +52,7 @@
                 <h5 class="card-title title">Jūs aptarnaujate {{staliukoID}} staliuką</h5>
             </div>
             <div class="center">
-                <img src="https://www.nicepng.com/png/detail/187-1873095_png-royalty-free-download-empty-dinner-table-setting.png" alt="">
+                <img src="../assets/Alkanas Vilkas.jpg" alt="">
                 <h4>Jūsų stalas tuščias</h4>
                 <!-- <h6>Pridėti prekių į krepšelį</h6>
                 <button routerLink="/products" class="btn btn-primary">Pradėti užsakymą</button> -->
