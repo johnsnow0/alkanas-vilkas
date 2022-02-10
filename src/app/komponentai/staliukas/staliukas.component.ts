@@ -57,8 +57,9 @@ export class StaliukasComponent implements OnInit {
     this.patiekalas = [];
   }
 
-  addItem(kiekis: any) {
-this.kiekis = kiekis;
+  addItem(kiekis: any, index: any) {
+this.patiekalas[index].kiekis = kiekis;
+    this.kiekis = kiekis;
 return this.kiekis;
   }
 }

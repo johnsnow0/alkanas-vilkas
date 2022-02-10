@@ -19,7 +19,7 @@ export class AuthService {
       
       console.log('AS PRISIJUGES');
       
-      this.router.navigate(['/']);
+      this.router.navigate(['staliukai']);
       alert('Jus prisijunges:  '+ email);
   
       var user = await this.afAuth.currentUser;
@@ -43,7 +43,15 @@ export class AuthService {
   
   userAtnaujinta = new BehaviorSubject<boolean>(false);
 
-
+  logout() {
+    this.afAuth.signOut().then(async() => {
+      var user = await this.afAuth.currentUser;
+  this.dabartinisUser= user;
+  
+      this.router.navigate(['/'])});
+     
+      this.userAtnaujinta.next(true);
+  }
 
 
 }

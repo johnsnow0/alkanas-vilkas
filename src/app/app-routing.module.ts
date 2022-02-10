@@ -11,17 +11,18 @@ import { StaliukaiComponent } from './komponentai/staliukai/staliukai.component'
 import { StaliukasComponent } from './komponentai/staliukas/staliukas.component';
 import { StaliukoMygtukasComponent } from './komponentai/staliuko-mygtukas/staliuko-mygtukas.component';
 import { VirtuveComponent } from './komponentai/virtuve/virtuve.component';
+import{ AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'staliukai', component: StaliukaiComponent },
+  { path: 'staliukai', component: StaliukaiComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'staliuko-mygtukas', component: StaliukoMygtukasComponent },
   { path: 'drop-down', component: DropDownComponent },
   { path: 'meniu', component: MeniuComponent },
-  { path: 'prideti-patiekala', component: PridetiPatiekalaComponent },
+  { path: 'prideti-patiekala', component: PridetiPatiekalaComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'staliukas', component: StaliukasComponent },
   { path: 'kiekio-mygtukas', component: KiekioMygtukasComponent },
-  { path: 'virtuve', component: VirtuveComponent },
+  { path: 'virtuve', component: VirtuveComponent, canActivate: [AngularFireAuthGuard] },
   { path: 'registracija', component: RegistracijaComponent },
   { path: 'login', component: LoginComponent }
 ];
