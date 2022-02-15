@@ -11,7 +11,7 @@ export class StaliukasComponent implements OnInit {
 
   patiekalas:any[] = [];
   grandTotal:number=0;
-  kiekis: any;
+  kiekis: number = 1;
   staliukoID: any;
 
   constructor(private http: ApiService) {
@@ -61,5 +61,10 @@ export class StaliukasComponent implements OnInit {
 this.patiekalas[index].kiekis = kiekis;
     this.kiekis = kiekis;
 return this.kiekis;
+  }
+
+  krepselioSuma() {
+    
+
   }
 }
