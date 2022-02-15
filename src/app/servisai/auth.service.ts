@@ -11,6 +11,8 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
   dabartinisUser: any;
+  currUser: any;
+  
 
   login(email: string, password: string) {
     console.log(email, password);  
@@ -21,13 +23,16 @@ export class AuthService {
       
       this.router.navigate(['staliukai']);
       alert('Jus prisijunges:  '+ email);
+      
   
       var user = await this.afAuth.currentUser;
   this.dabartinisUser= user;
   
-    if (user) {
-      console.log('prisijunges vartotojas yra:')
-      console.log(user);
+    if (this.dabartinisUser) {
+      console.log('prisijunges vartotojas yra: ' + this.dabartinisUser.email)
+      
+      
+      
     } else {
       // No user is signed in.
     }
@@ -38,7 +43,7 @@ export class AuthService {
 
   async getCurrentUser() {
   
-    return this.dabartinisUser;
+    return this.dabartinisUser;  
   }
   
   userAtnaujinta = new BehaviorSubject<boolean>(false);
