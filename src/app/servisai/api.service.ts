@@ -18,7 +18,10 @@ export class ApiService {
   }
   async gautiPatiekala(id: any) {
 
-    var rezultatas = await this.http.get('https://restoranas-api.herokuapp.com/' + id).toPromise();
+    var rezultatas: any = await this.http.get('https://restoranas-api.herokuapp.com/' + id).toPromise();
+    console.log("rezultatas yra ")
+    console.log(rezultatas)
+    rezultatas.kiekis = 1;
     this.patiekalasGautasEvent.emit(rezultatas);
   }
 
