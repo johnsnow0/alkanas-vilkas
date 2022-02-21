@@ -62,14 +62,6 @@ this.patiekalas[index].kiekis = kiekis;
     this.kiekis = kiekis;
 return this.kiekis;
   }
-//   kiekisCheck(index: any) {
-// if (this.patiekalas[index].kiekis == null) {
-//   this.patiekalas[index].kiekis = 1;
-//   }
-//   return this.patiekalas[index].kiekis;
-
-    
-//   }
 
   krepselioSuma() {
     
